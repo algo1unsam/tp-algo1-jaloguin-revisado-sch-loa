@@ -22,15 +22,14 @@ object legionDelTerror {
 		self.lider().recibirCaramelos(cantidad)
 	}
 	method normaSinRepetidos(){
-		const disfraces = integrantes.map({i => i.disfraces()})
-		const disfraces2 = [trajeDeBruja,mascaraDracula,barba,mascaraFrankenstein,mascaraPolitico]
-		disfraces.forEach({disfraz => integrantes.forEach({integrante => if disfraz in}) })
-		
+		return []
 	}
 	method todosLosDisfraces(){
 		return integrantes.map({i => i.disfraces()})
 	}
-	method disfracesRepetidos(){}
+	method disfracesRepetidos(){
+		return []
+	}
 }
 
 object barrio {
