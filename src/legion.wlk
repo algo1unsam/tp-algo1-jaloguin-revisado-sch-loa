@@ -21,8 +21,15 @@ object legionDelTerror {
 	method recibirCaramelos(cantidad){
 		self.lider().recibirCaramelos(cantidad)
 	}
-	method normaSinRepetidos(){}
-	method todosLosDisfraces(){}
+	method normaSinRepetidos(){
+		const disfraces = integrantes.map({i => i.disfraces()})
+		const disfraces2 = [trajeDeBruja,mascaraDracula,barba,mascaraFrankenstein,mascaraPolitico]
+		disfraces.forEach({disfraz => integrantes.forEach({integrante => if disfraz in}) })
+		
+	}
+	method todosLosDisfraces(){
+		return integrantes.map({i => i.disfraces()})
+	}
 	method disfracesRepetidos(){}
 }
 
@@ -35,6 +42,10 @@ object barrio {
 	method chicosConMasCaramelos(cantidad){
 		var chicosEtc = chicos.filter({i => i.caramelos > cantidad})
 		return chicosEtc
+	}
+	
+	method algunoMuyAsustador(){
+		return chicos.any({i => i.capacidadSusto > 42})
 	}
 }
 
