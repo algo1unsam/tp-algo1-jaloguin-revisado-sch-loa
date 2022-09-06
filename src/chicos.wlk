@@ -23,7 +23,7 @@ object macaria {
 	}
 	
 	method recibirCaramelos(cantidad){
-		caramelos += cantidad - cantidad.div(4) 
+		caramelos += (cantidad - cantidad/4).div(1)
 	}
 	
 	method dejarDeUsarMenosEfectivo(){

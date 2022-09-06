@@ -29,7 +29,7 @@ object mascaraFrankenstein {
 }
 
 object mascaraPolitico {
-	var promesasCampania = 0
+	var promesasCampania = 5
 	
 	method nivelSusto() {
 		return promesasCampania * 2	
