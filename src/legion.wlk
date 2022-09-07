@@ -4,9 +4,11 @@ import adultos.*
 
 object legionDelTerror {
 	var integrantes = []
+	var disfraces = []
 	
 	method agregarIntegrantes(_integrantes){
 		integrantes.addAll(_integrantes)
+		disfraces.map({i => i.disfraces()})
 	}
 	
 	method capacidadSusto(){
@@ -22,13 +24,14 @@ object legionDelTerror {
 		self.lider().recibirCaramelos(cantidad)
 	}
 	method normaSinRepetidos(){
-		return []
+		disfraces = disfraces.flatten() 
 	}
 	method todosLosDisfraces(){
-		return integrantes.map({i => i.disfraces()})
+		return disfraces
 	}
-	method disfracesRepetidos(){
-		return []
+	method disfracesRepetidos(){	
+		disfraces.find({disfraz =>})
+		return 
 	}
 }
 
@@ -39,12 +42,12 @@ object barrio {
 		chicos.addAll(integrantes)
 	}
 	method chicosConMasCaramelos(cantidad){
-		var chicosEtc = chicos.filter({i => i.caramelos > cantidad})
-		return chicosEtc
+	    chicos.sortBy({a, b => a.caramelos() > b.caramelos()})
+		return chicos.take(cantidad)
 	}
 	
 	method algunoMuyAsustador(){
-		return chicos.any({i => i.capacidadSusto > 42})
+		return chicos.any({i => i.capacidadSusto() > 42})
 	}
 }
 

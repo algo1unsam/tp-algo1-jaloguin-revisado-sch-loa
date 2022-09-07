@@ -2,8 +2,8 @@ import elementos.*
 
 object macaria {
 	var nivelIra= 10
-	var disfraces = [ ]
-	var property caramelos = 0
+	var property disfraces = [ ]
+	var caramelos = 0
 	
 	method disfraces(){
 		return disfraces
@@ -18,7 +18,6 @@ object macaria {
 	}
 	
 	method disfrazar(disfraz){
-		self.validoDisfraz(disfraz)
 		disfraces.add(disfraz)
 	}
 	
@@ -31,17 +30,12 @@ object macaria {
 		disfraces.remove(menosEfectivo)
 	}
 	
-	method validoDisfraz(disfraz){
-		if(disfraces.contains(disfraz)){
-			self.error("Macaria ya tiene puesto ese disfraz.")
-		}
-	}
 }
 
 object pancracio {
 	var cantidadDeUs = 4
-	var disfraces =  [mascaraDracula]
-	var property caramelos = 0
+	var property disfraces =  [mascaraDracula]
+	var caramelos = 0
 	
 	method caramelos(){
 		return caramelos
@@ -56,7 +50,6 @@ object pancracio {
 	}
 	
 	method disfrazar(disfraz){
-		self.validoDisfraz(disfraz)
 		disfraces.clear()
 		disfraces.add(disfraz)
 	}
@@ -69,17 +62,12 @@ object pancracio {
 		cantidadDeUs += 2
 	}
 	
-	method validoDisfraz(disfraz){
-		if(disfraces.contains(disfraz)){
-			self.error("Pancracio ya tiene puesto ese disfraz.")
-		}
-	}
 }
 
 // El chico inventado .
 
 object pedro {
-	var disfraces = []
+	var property disfraces = []
 	var caramelos = 0
 	
 	method caramelos(){
@@ -87,15 +75,14 @@ object pedro {
 	}
 	
 	method recibirCaramelos(cantidad){
-		caramelos += cantidad.div(4)
+		caramelos += (cantidad/4).div(1)
 	}
 	
 	method capacidadSusto(){
-		return if(disfraces.isEmpty()) 0 else disfraces.sum(disfraz => disfraz.nivelSusto())
+		return if(disfraces.isEmpty()) 0 else disfraces.sum({disfraz => disfraz.nivelSusto()})
 	}
 	
 	method disfrazar(disfraz){
-		self.validoDisfraz(disfraz)
 		disfraces.add(disfraz)
 	}
 	
@@ -107,10 +94,5 @@ object pedro {
 		return disfraces
 	}
 	
-	method validoDisfraz(disfraz){
-		if(disfraces.contains(disfraz)){
-			self.error("Pancracio ya tiene puesto ese disfraz.")
-		}
-	}
 }
 
